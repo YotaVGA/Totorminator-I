@@ -37,7 +37,7 @@ polygenPath = "/home/totoro/temp/polygen-1.0.6/polygen"
 
 autoJoinChannels :: Set.Set String
 --autoJoinChannels = Set.singleton "#proveTotorminator"
-autoJoinChannels = Set.singleton "#100%cotton"
+autoJoinChannels = Set.singleton "#il_cuscino_di_minnie"
 
 userconf :: User
 userconf = User {username   = "Totorminator",
