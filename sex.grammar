@@ -1,0 +1,69 @@
+(* Copyright © 2013 Fulvio Satta *)
+
+(*
+   Totorminator is free software: you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation, either version 3 of the License, or
+   (at your option) any later version.
+
+   Totorminator is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*)
+
+I ::= \ comando "%sex" su \ totorminator;
+
+Nome1 ::= "<1>";
+Nome2 ::= "<2>";
+
+S ::= Parte1;
+
+Parte1 ::= \ AzioneIniziale ^ ".\n" ^ (++++++++++ Parte2 | -------------------- ParteDistrazione);
+Parte2 ::= \ AzioneA ^ "." (++++++++++ Parte3 | -------------------- ParteDistrazione);
+Parte3 ::= \ AzioneB ^ ".\n" ^ (++++++++++ Parte4 | -------------------- ParteDistrazione);
+Parte4 ::= \ AzioneC ^ "." (++++++++++ Parte5 | -------------------- ParteDistrazione);
+Parte5 ::= \ AzioneD ^ "." (++++++++++ Parte6 | -------------------- ParteDistrazione);
+Parte6 ::= \ (++++++++++ AzioneE ^ ".\n" ^ \ (FineAppagata | FineNormale) ^ "." | -------------------- ParteDistrazione);
+
+ParteDistrazione ::=  ^ "\n" ^ \ Distrazione ^ ".\n" ^ \ FineMoscia ^ ".";
+
+IDue ::= {Nome1} e {Nome2} | i due;
+UnoDeiDue ::= Nome1 | Nome2;
+
+AzioneIniziale ::= IDue si guardano negli occhi ^ "," pronti per cominciare  |
+                   {Nome1} afferra {Nome2} e lo bacia appassionatamente |
+                   imbarazzati ^ "," non sanno come cominciare ^ "," ma UnoDeiDue
+                       prende l'iniziativa;
+
+AzioneA ::= (si vedono vestiti volare ovunque           |
+             {Nome1} >(bacia | lecca) {Nome2} [ovunque] |
+             UnoDeiDue ulula) [^ "." \ AzioneA];
+
+AzioneB ::= (Nome1 prende un vibratore [^"," Nome2 (non ne e' | sembra) felice] |
+             Nome2 prende un vibratore [^"," Nome1 (non ne e' | sembra) felice] |
+             {Nome1} sbatte {Nome2} per terra                                   |
+             {Nome1} fa sesso orale su {Nome2}) [+ ^ "." \ AzioneB];
+
+AzioneC ::= {Nome1} prende [violentemente] {Nome2} e i due cominciano a fare sesso;
+
+AzioneD ::= ({Nome1} >(bacia | lecca) {Nome2} [ovunque] |
+             {Nome1} sbatte {Nome2} per terra           |
+             UnoDeiDue ulula) [+ ^ "." \ AzioneD];
+
+AzioneE ::= IDue raggiungono [velocemente] l'orgasmo in una penetrazione
+              (sublime | divina | mediocre | appena sufficiente);
+
+TempoImprovviso ::= improvvisamente | tutto d'un tratto | ad un certo punto;
+
+Distrazione ::= TempoImprovviso (UnoDeiDue vede passare un gatto e lo segue |
+                                 UnoDeiDue si smoscia);
+
+FineDistrazione ::= Distrazione ^ "," e FineMoscia ^ ".";
+
+FineMoscia   ::= IDue si ritirano senza aver concluso nulla;
+FineAppagata ::= nella piena soddisfazione [^ ","] IDue si abbracciano amorevolmente;
+FineNormale  ::= tutto e' andato bene ^ "," ma si puo' fare di meglio;

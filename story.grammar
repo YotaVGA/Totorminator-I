@@ -1,0 +1,59 @@
+(* Copyright © 2013 Fulvio Satta *)
+
+(*
+   Totorminator is free software: you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation, either version 3 of the License, or
+   (at your option) any later version.
+
+   Totorminator is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*)
+
+I ::= \ storie per \ totorminator;
+
+S ::= Storia1;
+Storia1 ::= Incipit1 ^ "\n" ^ Corpo1 ^ "\n" ^ Fine1;
+
+Incipit1 ::= \ Quando {^ ","} ero Luogo1.dove ForseCombricola.con.A {_} e Distrazione ^ ".";
+Corpo1   ::= \ [EmozioneDistrazione ^ [","] " " ^] AzionePostDistrazione ^ ".";
+Fine1 ::= \ ParteInizialeFine1 [ParteFinaleFine1] ^ ".";
+
+Amico ::= ("Ubaldo" | "HorribleGuy" | shibotta | "Manolo" il pinolo | (A: il | NA: _) fantasma formaggino | "Totorina");
+
+Amico1 := Amico.(A|NA).(con|piano);
+Luogo1  := Luogo.dove;
+ForseAmico1 := [Amico1.(con|piano)];
+ForseCombricola := [con Amico1.(con|piano) [ed altri amici]];
+
+Quando ::= >(ieri | oggi | qualche >(Periodo.S | tempo) fa | una volta);
+
+Periodo ::= S: >(+giorno | settimana | -mese | --anno) | P: >(+giorni | settimane | -mesi | --anni);
+
+Luogo ::= >(CategorieLuoghi.cat1 >(cinema | mare) |
+            CategorieLuoghi.cat2 (montagna)       |
+            CategorieLuoghi.cat3 (dentista)       |
+            CategorieLuoghi.cat4 (andrologo));
+
+CategorieLuoghi ::= (dove: (cat1: al  |
+                            cat2: in  |
+                            cat3: dal |
+                            cat4: dall ^ "'" ^));
+
+Animale ::= un gatto | un criceto;
+
+QuandoDistrazione ::= a un certo punto | di punto in bianco | senza che me l'aspettassi | improvvisamente;
+AzioneDistrazione ::= sento | vedo;
+OggettoDistrazione ::= >> - un'esplosione | Animale.un <<;
+Distrazione ::= QuandoDistrazione AzioneDistrazione OggettoDistrazione;
+
+EmozioneDistrazione ::= stupito | incuriosito | sorpreso | spaventato;
+AzionePostDistrazione ::= decido di andare a vedere da vicino | mi avvicino;
+
+ParteInizialeFine1 ::= >> e' stata una bella esperienza | e' stata un'esperienza (gradevole | interessante | conturbante) <<;
+ParteFinaleFine1 ::= [e la ripeterei | ma non la ripeterei];
